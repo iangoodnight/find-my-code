@@ -1,0 +1,66 @@
+<div class="container-fluid d-flex w-100 h-100 p-3 mx-auto flex-column" id="wrapper">
+	<div class="container" id="input">
+		<div class="row">
+			<input type="text" name="search" id="search" class="form-control" tabindex="1" autofocus>
+		</div>
+		<div class="row">
+			<main role="main" class="mx-auto flex-column" tabindex="2">
+				{{#if error}}
+					{{error}}
+				{{/if}}
+				{{#if data.Products}}
+				<table class="table table-borderless text-left">
+					<tbody>
+						{{#each data.Products}}
+						<tr>
+							<th scope="row">SKU:</th>
+							<td>{{this.Sku}}</td>
+						</tr>
+						<tr>
+							<th scope="row">PartNumber:</th>
+							<td>{{this.PartNumber}}</td>
+						</tr>
+						<tr>
+							<th scope="row">Description:</th>
+							<td>{{this.Description}}</td>
+						</tr>
+						<tr>
+							<th scope="row">On Hand:</th>
+							<td>{{this.QuantityOnHand}} each</td>
+						</tr>
+						<tr>
+							<th scope="row">Available:</th>
+							<td>{{this.QuantityAvailable}} each</td>
+						</tr>
+						<tr>
+							<th scope="row">Weight:</th>
+							<td>{{this.WeightValue}} {{this.WeightUnit}}</td>
+						</tr>
+						{{/each}}
+						<tr>
+							{{#if data.Items }}
+							<th scope="row">Locations:</th>
+							<td>
+							{{#each data.Items }}
+								<div class="location">
+									<p>--------------------</p>
+									<p>{{this.WarehouseCode}}</p>
+									<p>{{this.LocationCode}}</p>
+									<p>{{this.Quantity}} each</p>
+								</div>
+							{{/each}}
+							</td>
+							{{/if}}
+						</tr>
+					</tbody>
+				</table>
+				{{else}}
+				No data found...
+				{{/if}}
+			</main>
+		</div>
+	</div>
+</div>
+<footer class="fixed-bottom text-right">
+	<p>Ian Goodnight</p>
+</footer>
