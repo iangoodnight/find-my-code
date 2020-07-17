@@ -50,3 +50,7 @@ div.row input {
 		background-color: rgba(black,0.1);
 	}
 }
+
+.form-control:focus {
+	border-color: white;
+}
