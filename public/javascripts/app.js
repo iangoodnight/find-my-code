@@ -2,12 +2,16 @@ function app() {
 	var input = document.querySelector('input#search');
 	input.focus();
 	input.addEventListener('keydown', function(e) {
-		if (input.value >= 12) {
+		console.log(`Value: ${input.value}`);
+		if (input.value.length >= 12) {
+			console.log("Outer conditional...");
 			if (e.keyCode === 9 || e.keyCode === 13) {
+				console.log('Hit inner conditional...');
 				location.replace(`/${input.value}`);
-				e.stop();
+
 			};
 		};
+		console.log(e.keyCode);
 	});
 };
 
