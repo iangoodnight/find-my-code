@@ -9,21 +9,21 @@ body {
 	text-shadow: 0 0 5px #C8C8C8;
 }
 
-body::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 199vh;
-	background: repeating-linear-gradient(
-		0deg,
-		rgba(black, 0.15),
-		rgba(black, 0.15) 1px,
-		transparent 1px,
-		transparent 2px
-	);
-}
+// body::after {
+// 	content: "";
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100vw;
+// 	height: 199vh;
+// 	background: repeating-linear-gradient(
+// 		0deg,
+// 		rgba(black, 0.15),
+// 		rgba(black, 0.15) 1px,
+// 		transparent 1px,
+// 		transparent 2px
+// 	);
+// }
 
 div.location {
 	margin-bottom: 10px;
