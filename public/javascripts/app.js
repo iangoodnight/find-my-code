@@ -1,12 +1,11 @@
 function app() {
 	var input = document.querySelector('input#search');
+	var sku = document.querySelector('input#sku');
 	input.focus();
 	input.addEventListener('keydown', function(e) {
-		if (input.value >= 12) {
-			if (e.keyCode === 9 || e.keyCode === 13) {
+		if (e.keyCode === 9 || e.keyCode === 13) {
+			sku.checked ? location.replace(`/s/${input.value}`) :
 				location.replace(`/${input.value}`);
-				e.stop();
-			};
 		};
 	});
 };
@@ -19,4 +18,4 @@ document.body.addEventListener('touchstart', function(e) {
 	document.querySelector('input#search').focus();
 });
 
-app();
+app();                                                                                         
